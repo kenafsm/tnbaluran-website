@@ -11,7 +11,7 @@
         <div class="cards">
             @foreach ($posts as $post)
                 <div class="card" style="background-image: url('{{ asset('storage/' . $post->post_image) }}');">
-                    <a href="/flora-detail/{{ $post->slug }}">{{ $post->title }}</a>
+                    <a href="{{ route('flora-detail', ['slug' => $post->slug]) }}">{{ $post->title }}</a>
                 </div>
             @endforeach
         </div>

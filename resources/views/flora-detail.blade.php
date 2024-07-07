@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
-@section('title', $post->title)
+@section('title', $postDetail->title)
 
 @section('container')
-    <h2 class="post-name">{{ $post->title }}</h2>
-    @if ($post->post_image)
-        <img src="{{ asset('storage/' . $post->post_image) }}" alt="Post Image" class="imgpost">
+    <h2 class="post-name">{{ $postDetail->title }}</h2>
+    @if ($postDetail->post_image)
+        <img src="{{ asset('storage/' . $postDetail->post_image) }}" alt="Post Image" class="imgpost">
     @endif
     <div class="content">
         <svg width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,41 +29,41 @@
             </filter>
             </defs>
         </svg>
-        @if ($post->nama_latin)
+        @if ($postDetail->nama_latin)
             <h4>Nama Latin</h4>
-            <p>{{ $post->nama_latin }}</p>
+            <p>{{ $postDetail->nama_latin }}</p>
         @endif
-        @if ($post->kepadatan)
+        @if ($postDetail->kepadatan)
             <h4>Kepadatan</h4>
-            <p>{{ $post->kepadatan }}</p>
+            <p>{{ $postDetail->kepadatan }}</p>
         @endif
-        @if ($post->sebaran)
+        @if ($postDetail->sebaran)
             <h4>Sebaran</h4>
-            <p>{{ $post->sebaran }}</p>
+            <p>{{ $postDetail->sebaran }}</p>
         @endif
-        @if ($post->status)
+        @if ($postDetail->status)
             <h4>Status</h4>
-            <p>{{ $post->status }}</p>
+            <p>{{ $postDetail->status }}</p>
         @endif
-        @if ($post->bentuk_daun)
+        @if ($postDetail->bentuk_daun)
             <h4>Bentuk Daun</h4>
-            <img src="{{ asset('storage/' . $post->bentuk_daun) }}" alt="Bentuk Daun" class="imgpost">
+            <img src="{{ asset('storage/' . $postDetail->bentuk_daun) }}" alt="Bentuk Daun" class="imgpost">
         @endif
-        @if ($post->morfologi)
+        @if ($postDetail->morfologi)
             <h4>Morfologi</h4>
-            <p>{{ $post->morfologi }}</p>
+            <p>{{ $postDetail->morfologi }}</p>
         @endif
-        @if ($post->anatomi)
+        @if ($postDetail->anatomi)
             <h4>Anatomi</h4>
-            <p>{{ $post->anatomi }}</p>
+            <p>{{ $postDetail->anatomi }}</p>
         @endif
-        @if ($post->kegunaan)
+        @if ($postDetail->kegunaan)
             <h4>Kegunaan</h4>
-            <p>{{ $post->kegunaan }}</p>
+            <p>{{ $postDetail->kegunaan }}</p>
         @endif
-        @if ($post->deskripsi)
+        @if ($postDetail->deskripsi)
             <h4>Deskripsi</h4>
-            <p>{{ $post->deskripsi }}</p>
+            <p>{{ $postDetail->deskripsi }}</p>
         @endif
     </div>
 @endsection

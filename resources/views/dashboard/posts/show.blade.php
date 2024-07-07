@@ -8,9 +8,8 @@
         <div class="col-lg-8">
 
             <div class="d-grid gap-2 d-md-block">
-                {{-- <a href="/posts" class="btn btn-success"><i class="bi bi-arrow-left text-nowrap"></i>Kembali ke posts</a> --}}
-                <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-warning"><i class="bi bi-pencil-square text-nowrap"></i>Edit</a>
-                <form action="/dashboard/posts/{{ $post->slug }}" method="POST" class="d-inline">
+                <a href="{{ route('posts.edit', $post->slug) }}" class="btn btn-warning"><i class="bi bi-pencil-square text-nowrap"></i>Edit</a>
+                <form action="{{ route('posts.destroy', $post->slug) }}" method="POST" class="d-inline">
                     @method('delete')
                     @csrf
                     <button class="btn btn-danger" onclick="return confirm('Yakin menghapus post?')"><i class="bi bi-eraser-fill"></i>

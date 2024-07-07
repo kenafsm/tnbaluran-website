@@ -131,7 +131,7 @@
       {{ session('loginError') }}
     </div>
     @endif
-  <form action="/login" method="post">
+  <form action="{{route('login')}}" method="post">
     @csrf
     <img class="mb-4" src="assets/tnb-logo.png" alt="" width="auto" height="57">
     <h1 class="h3 mb-3 fw-normal">Admin Login</h1>

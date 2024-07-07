@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
-@section('title', $post->title)
+@section('title', $postDetail->title)
 
 @section('container')
-        <h2 class="post-name">{{ $post->title }}</h2>
-        @if ($post->post_image)
-            <img src="{{ asset('storage/' . $post->post_image) }}" alt="Post Image" class="imgpost">
+        <h2 class="post-name">{{ $postDetail->title }}</h2>
+        @if ($postDetail->post_image)
+            <img src="{{ asset('storage/' . $postDetail->post_image) }}" alt="Post Image" class="imgpost">
         @endif
         <div class="content">
             <svg width="98" height="98" viewBox="0 0 98 98" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,6 +48,6 @@
                 </clipPath>
                 </defs>
                 </svg>
-            <p>{{ $post->deskripsi }}</p>
+            <p>{{ $postDetail->deskripsi }}</p>
         </div>
 @endsection

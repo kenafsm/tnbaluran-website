@@ -17,8 +17,8 @@
             <div class="menu-btn">
                 <i class="fas fa-bars"></i>
                 <div class="dropdown">
-                    <a href="/flora">Flora</a>
-                    <a href="/situs">Situs</a>
+                    <a href="{{route('flora')}}">Flora</a>
+                    <a href="{{route('situs')}}">Situs</a>
                     <a href="https://www.balurannationalpark.id/">Situs Resmi Baluran</a>
                 </div>
             </div>
@@ -26,7 +26,7 @@
         </div>
         
         <div class="title">
-            <h1><a href="/">TAMAN NASIONAL BALURAN</a></h1>
+            <h1><a href="{{route('landing')}}">TAMAN NASIONAL BALURAN</a></h1>
             <br />
             <h2 id="titledesc">SELAMAT DATANG DI INFORMASI KAWASAN KAMI</h2>
         </div>

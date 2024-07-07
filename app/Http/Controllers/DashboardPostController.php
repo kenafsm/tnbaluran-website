@@ -62,7 +62,7 @@ class DashboardPostController extends Controller
 
         Post::create($validatedData);
 
-        return redirect('dashboard/posts/')->with('success', 'Berhasil menambahkan post');
+        return redirect(route('posts.index'))->with('success', 'Berhasil menambahkan post');
     }
 
     /**
@@ -131,7 +131,7 @@ class DashboardPostController extends Controller
 
     Post::where('id', $post->id)->update($validatedData);
 
-    return redirect('/dashboard/posts')->with('success', 'Berhasil mengubah post!');
+    return redirect(route('posts.index'))->with('success', 'Berhasil mengubah post!');
 }
 
     /**
@@ -140,6 +140,6 @@ class DashboardPostController extends Controller
     public function destroy(Post $post)
     {
         Post::destroy($post->id);
-        return redirect('/dashboard/posts')->with('success', 'Berhasil menghapus post!');
+        return redirect(route('posts.index'))->with('success', 'Berhasil menghapus post!');
     }
 }

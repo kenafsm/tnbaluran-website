@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -22,24 +23,21 @@ class PostController extends Controller
         return view($post, compact('posts'));
     }
 
-    public function show($post, $slug)
+    public function show(Request $request, $slug)
     {
-    
-        if ($post == 'situs' || $post == 'flora') {
-            $post = Post::where('slug', $slug)->first();
-            if (!$post) {
-                abort(404, 'Post not found');
-            }
+        $postType = $request->route()->defaults['post'];
+        $postDetail = Post::where('slug', $slug)->first();
+        if (!$postDetail) {
+            abort(404, 'Post not found');
+        }
+
+        if ($postType == 'situs-detail') {
+            return view('situs-detail', compact('postDetail'));
+        } elseif ($postType == 'flora-detail') {
+            return view('flora-detail', compact('postDetail'));
         } else {
             abort(404, 'Type not found');
         }
-
-        if ($post == 'situs') {
-            return view('situs-detail', compact('post'));
-        } else {
-            return view('flora-detail', compact('post'));
-        }
-
     }
 
 }
